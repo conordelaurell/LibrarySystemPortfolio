@@ -77,9 +77,70 @@ public class Inventory {
 	public void printAll() {
 		
 		
+		if (inventory.isEmpty()) {
+			
+			System.out.println("No books available");
+			return;
+			
+			
+		}
+		
+		
+		for(Book book : inventory) {
+			
+			book.printBookInfo();
+			
+		}
+		
+		
 		
 		
 	}
+	
+	
+	public void searchByTitle(String title) {
+		
+		boolean found = false;
+		
+		
+		for (Book book : inventory) {
+			
+			if (book.getTitle().toLowerCase().contains(title.toLowerCase())) {
+				
+				book.printBookInfo();
+				
+				
+				found = true;
+				
+				
+				
+			}
+			
+			
+			
+		}
+		
+		
+		if(!found) {
+			
+			System.out.println("No matching book found!");
+			
+			
+			
+		}
+		
+		
+		
+	}
+	
+	public int getMainInventoryCount() {
+		
+		return inventory.size();
+		
+	}
+	
+	
+	
 	
 	
 }
