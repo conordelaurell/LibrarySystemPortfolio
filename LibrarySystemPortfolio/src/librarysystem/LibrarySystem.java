@@ -19,7 +19,7 @@ public class LibrarySystem {
 		
 		while (choice != 6) {
 			
-			System.out.println("\n------ Libray Menu ------");
+			System.out.println("\n------ Library Menu ------");
 			System.out.println("1. Add Book");
 			System.out.println("2. Borrow Book");
 			System.out.println("3. Return Book");
@@ -78,7 +78,6 @@ public class LibrarySystem {
 					
 					
 				case 4:
-					input.nextLine();
 					System.out.print("Enter title to search: ");
 					inventory.searchByTitle(input.nextLine());
 					break;
@@ -86,6 +85,7 @@ public class LibrarySystem {
 					
 				case 5:
 					inventory.printAll();
+					break;
 					
 					
 				case 6:
