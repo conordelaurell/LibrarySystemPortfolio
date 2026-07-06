@@ -14,9 +14,10 @@ public class LibrarySystem {
 		Inventory inventory = new Inventory();
 		int choice = 0;
 		
+	
 		
 		
-		while (choice != 0) {
+		while (choice != 6) {
 			
 			System.out.println("\n------ Libray Menu ------");
 			System.out.println("1. Add Book");
@@ -29,6 +30,89 @@ public class LibrarySystem {
 			
 			
 			
+			try {
+				
+				
+				choice = input.nextInt();
+				input.nextLine();
+				
+				switch(choice) {
+				
+				case 1:
+					System.out.print("Enter ID: ");
+					int id = input.nextInt();
+					input.nextLine();
+					
+					System.out.print("Enter Title: ");
+					String title = input.nextLine();
+					
+					System.out.print("Enter Author: ");
+					String author = input.nextLine();
+					
+					System.out.print("Enter ISBN: ");
+					String isbn = input.nextLine();
+					
+					System.out.print("Enter Pages: ");
+					int pages = input.nextInt();
+					input.nextLine();
+					
+					Book book = new Book(id, title, author, isbn, pages);
+					inventory.addBook(book);
+					break;
+					
+					
+				case 2:
+					System.out.print("Enter Book ID to borrow: ");
+					inventory.borrowBook(input.nextInt());
+					break;
+					
+					
+					
+					
+					
+				case 3:
+					System.out.print("Enter Book ID to return: ");
+					inventory.returnBook(input.nextInt());
+					break;
+					
+					
+					
+				case 4:
+					input.nextLine();
+					System.out.print("Enter title to search: ");
+					inventory.searchByTitle(input.nextLine());
+					break;
+					
+					
+				case 5:
+					inventory.printAll();
+					
+					
+				case 6:
+					System.out.println("Exiting the program. GOODBYE!");
+					break;
+					
+				default:
+					System.out.println("Invalid Option!");
+					
+				
+				
+				
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+		} catch (Exception e) {
+			
+			
+			System.out.println("Invalid input. Please try again!");
+			input.nextLine();
 			
 			
 			
@@ -37,5 +121,8 @@ public class LibrarySystem {
 		
 		
 	}
+	
+	input.close();
 
+}
 }
